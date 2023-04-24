@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+<!--    <meta http-equiv="refresh" content="5">-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Sandy Loader v2.1</title>
+
+  </head>
+
+  <body>
+  {% block content %}{% endblock %}
+  <header>
+    <nav class="navbar navbar-light bg-light">
+      <a class="navbar-brand" href="#" >
+      <img src="/static/images/14.png" width="50" height="50" class="d-inline-block align-top" alt="">
+        Sandy Loader
+      </a>
+        <span class="navbar-text">
+          For support: contact us tkachev.n@liceum1535.ru
+        </span>
+    </nav>
+  </header>
+
+    <div align="center">
+      <h1>Here are your links</h1>
+      {% for line, link in list %}
+        {% if "clear" in line %}
+              <a style="margin-bottom: 10px" type="button" class="btn btn-success" href="{{link}}">{{line}}</a>
+                <br>
+        {% elif "dangerous" in line %}
+              <a style="margin-bottom: 10px" type="button" class="btn btn-danger" href="{{link}}">{{line}}</a>
+              <br>
+        {% else %}
+              <a style="margin-bottom: 10px" type="button" class="btn btn-secondary" href="{{link}}">{{line}}</a>
+              <br>
+        {% endif %}
+      {% endfor %}
+    </div>
+
+  </body>
+</html>
